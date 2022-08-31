@@ -1,0 +1,8 @@
+  456  touch "some text file".txt
+  457  echo "The quick brown fox jumps over the lazy dog" > "some text file.txt" 
+  458  cat "some text file.txt" 
+  459  > "some text file.txt" 
+  460  cat "some text file.txt" 
+  461  mv "some text file.txt" ex2.txt
+  462  history 
+  463  history | tail -n 8 > ex2.txt 
