@@ -91,6 +91,7 @@ void* aggregate(void* base, size_t size, int n, void* initial_value, void* (*opr
             *curerntValue /= n;
 
         output = (void*)curerntValue;
+        free(newValue);
     } else {
         double* baseInt = (double*)base;
         double* curerntValue = (double*)malloc(sizeof(double));
@@ -112,6 +113,7 @@ void* aggregate(void* base, size_t size, int n, void* initial_value, void* (*opr
             *curerntValue /= (double)n;
 
         output = (void*)curerntValue;
+        free(newValue);
     }
 
     return output;
@@ -155,6 +157,9 @@ int main() {
     resultDouble = aggregate(doubles, sizeof(double), 5, &initDouble, meanDouble);
     printf("The result of integer mean for numbers from 1 to 5: %d\n", *resultInt);
     printf("The result of double mean for numbers from 1.0 to 5.0: %.1f\n", *resultDouble);
+
+    free(integers);
+    free(doubles);
 
     return 0;
 }

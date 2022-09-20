@@ -24,7 +24,7 @@ struct Directory
     struct Directory* directories[MAX_DIRECTORIES_LENGTH];
     unsigned int nf;
     unsigned int nd;
-    char path[MAX_PATH_LENGTH]; 
+    char* path; 
 };
 
 
@@ -61,7 +61,11 @@ struct Directory* createDirectory(const char* path) {
     
     newDirectory->nf = 0;
     newDirectory->nd = 0;
+
+    newDirectory->path = (char*)malloc(sizeof(char) * MAX_PATH_LENGTH);
     strcpy(newDirectory->path, path);
+
+    return newDirectory;
 }
 
 
@@ -76,13 +80,17 @@ void add_file(struct Directory* directory, struct File* file) {
 void add_directory(struct Directory* parentDirectory, struct Directory* childDirectory) {
     parentDirectory->directories[parentDirectory->nd] = childDirectory;
     ++parentDirectory->nd;
+    char* tempString = strdup(childDirectory->path);
+    strcpy(childDirectory->path, parentDirectory->path);
+    strcat(childDirectory->path, tempString);
+    free(tempString);
 }
 
 
 int main() {
     struct Directory* rootDirectory = createDirectory("/");
-    struct Directory* homeDirectory = createDirectory("/home/");
-    struct Directory* binDirectory = createDirectory("/bin/");
+    struct Directory* homeDirectory = createDirectory("home/");
+    struct Directory* binDirectory = createDirectory("bin/");
     add_directory(rootDirectory, homeDirectory);
     add_directory(rootDirectory, binDirectory);
 
@@ -102,6 +110,13 @@ int main() {
     pwd_file(bashFile);
     pwd_file(ex3_1File);
     pwd_file(ex3_2File);
+
+    free(rootDirectory);
+    free(homeDirectory);
+    free(binDirectory);
+    free(bashFile);
+    free(ex3_1File);
+    free(ex3_2File);
 
     return 0;
 }
