@@ -1,0 +1,1 @@
+After running the program, in pstree output we can see, that bash creates child process sh and it has child process with name "ex3" and it has n children (noted as n*[ex3]), where n is number of processes we specified (3 in first case, 5 in second case).
