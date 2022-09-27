@@ -2,27 +2,32 @@
 #include <time.h>
 #include <unistd.h>
 #include <wait.h>
+#include <stdlib.h>
 
 
 int main() {
     pid_t firstChild, secondChild;
     int status;
 
+    clock_t parentStartTime = clock();
+
     firstChild = fork();
-    time_t firstChildStartTime = time(NULL);
+    clock_t firstChildStartTime = clock();
 
     if (firstChild == 0) {
         // first child process 
         printf("first child process id: %d\n", getpid());
-        printf("first child execution time: %ld\n", time(NULL) - firstChildStartTime);
+        printf("first child execution time: %ld\n", clock() - firstChildStartTime);
+        exit(EXIT_SUCCESS);
     } else {
         secondChild = fork();
-        time_t secondChildStartTime = time(NULL);
+        clock_t secondChildStartTime = clock();
 
         if (secondChild == 0) {
             // second child process
             printf("second child process id: %d\n", getpid());
-            printf("second child execution time: %ld\n", time(NULL) - secondChildStartTime);
+            printf("second child execution time: %ld\n", clock() - secondChildStartTime);
+            exit(EXIT_SUCCESS);
         } else {
             // parent process
             printf("parent process id: %d\n", getpid());
@@ -30,7 +35,7 @@ int main() {
     }
 
     wait(&status);
-    printf("parent process execution time: %ld\n", time(NULL) - firstChildStartTime);
+    printf("parent process execution time: %ld\n", clock() - parentStartTime);
 
     return 0;
 }
