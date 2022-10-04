@@ -1,0 +1,5 @@
+time taken for n = 10000000, m = 1:     13.77
+time taken for n = 10000000, m = 2:     6.54
+time taken for n = 10000000, m = 4:     4.22
+time taken for n = 10000000, m = 10:    4.55
+time taken for n = 10000000, m = 100:   4.50
