@@ -1,0 +1,2 @@
+text        data    bss     dec         hex     filename
+14722711    9845494 152400  24720605    17934dd /snap/bin/code
