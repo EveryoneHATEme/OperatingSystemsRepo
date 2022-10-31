@@ -1,0 +1,17 @@
+The output of "vmstat 1" during execution of my program
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 3907408 126156 2140276    0    0   211   128  202  398  4  2 94  0  0
+ 0  0      0 3897328 126156 2137972    0    0     0     0  275  370  1  0 99  0  0
+ 0  0      0 3890628 126156 2136732    0    0     0     0  294  435  1  0 99  0  0
+ 0  0      0 3880444 126164 2136564    0    0     0    72  265  358  0  0 99  0  0
+ 0  0      0 3870112 126164 2136564    0    0     0     0  215  307  1  0 99  0  0
+ 0  0      0 3860788 126164 2136564    0    0     0     0  240  385  1  0 99  0  0
+ 0  0      0 3850456 126164 2136564    0    0     0     0  284  400  1  0 99  0  0
+ 0  0      0 3840880 126164 2136564    0    0     0     0  240  330  1  0 99  0  0
+ 0  0      0 3830548 126164 2136564    0    0     0    64  279  421  1  0 99  0  0
+ 0  0      0 3921452 126164 2136564    0    0     0     0  257  375  0  0 99  0  0
+
+As we can see, free memory is decreasing by ~10 MB each second.
+Fields si and so are equal 0 on each line, because nothing is nothing is loaded or unloaded from the disk.

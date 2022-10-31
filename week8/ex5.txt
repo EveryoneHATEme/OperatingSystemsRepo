@@ -1,0 +1,3 @@
+A physical address is an address to a data that is currently presented in the physical memory.
+A virtual address is a program-generated address to a data that is currently presented in the physical memory or not presented in the physical memory. If it is not, then the operating system loads it from other sources.
+We cannot use physical addresses, instead, we are able to use virtual addresses that are maped to physical addresses in the Memory Management Unit if virtual memory is used.

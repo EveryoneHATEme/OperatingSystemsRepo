@@ -1,0 +1,6 @@
+Output of command "free -h -t":
+
+              total        used        free      shared  buff/cache   available
+Mem:          7.7Gi       1.6Gi       4.2Gi        54Mi       1.9Gi       5.8Gi
+Swap:         1.8Gi          0B       1.8Gi
+Total:        9.6Gi       1.6Gi       6.0Gi

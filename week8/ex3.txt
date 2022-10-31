@@ -1,0 +1,6 @@
+The line from the "top" command 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                  
+    8631 everyon+  20   0   33228  31912   1288 S   0.3   0.4   0:00.01 ex2          
+
+As we can see, the ex2 program uses 33228 bytes of virtual memory and 31912 bytes of physical memory. With each second, the number increases by 10 MB
