@@ -1,0 +1,2 @@
+To increase hit/miss ratio, we need the sequences of references that have repetitions in them. The example of such sequence provided in "ex2_input1.txt" file 
+To decrease hit/miss ratio, we need the sequences of references that have no repetitions in them. The example of such sequence provided in "ex2_input2.txt" file 
