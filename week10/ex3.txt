@@ -1,0 +1,12 @@
+input: chmod -x _ex3.txt
+output: nothing
+
+input: chmod uo+rwx _ex3.txt
+output: nothing
+
+input: chmod g=u _ex3.txt
+output: nothing
+
+666 permissions grant read and write permissions for everyone, but not execute.
+775 permissions is not allowing for others to write the file for other, but everything else is allowed for everybody.
+777 permissions allow everyone to read, write and execute the file.

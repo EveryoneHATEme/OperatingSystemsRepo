@@ -1,0 +1,2 @@
+/home/everyonehateme/repos/OperatingSystemsRepo/week10/_ex2.txt
+/home/everyonehateme/repos/OperatingSystemsRepo/week1/file.txt
