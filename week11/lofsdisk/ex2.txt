@@ -1,0 +1,10 @@
+Content of the root:
+lib
+file1
+lib64
+file2
+.
+ex2.txt
+ex2.out
+..
+bin
